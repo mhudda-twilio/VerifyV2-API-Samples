@@ -8,7 +8,7 @@ echo -u "\$ACCOUNT_SID:\$AUTH_TOKEN"
 echo 
 echo
 echo Response
-curl -X POST "https://verify.twilio.com/v2/Services" \
+curl -s -X POST "https://verify.twilio.com/v2/Services" \
 -u "$ACCOUNT_SID:$AUTH_TOKEN" \
 -d "FriendlyName=Demo - My v2 Verify Service"
 echo

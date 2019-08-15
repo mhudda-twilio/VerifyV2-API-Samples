@@ -16,7 +16,7 @@ RATELIMITS=$(cat << EOF
 }
 EOF
 )
-curl "https://verify.twilio.com/v2/Services/$VERIFY_SID/Verifications" -X POST \
+curl "https://verify.twilio.com/v2/Services/$VERIFY_SID/Verifications" -s -X POST \
 --data-urlencode "To=$USER_PHONE" \
 --data-urlencode "Channel=$CHANNEL_SMS" \
 --data-urlencode "RateLimits=$RATELIMITS" \

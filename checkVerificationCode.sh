@@ -8,7 +8,7 @@ echo --data-urlencode "To=\$USER_PHONE"
 echo -u "\$ACCOUNT_SID:\$AUTH_TOKEN" 
 echo
 echo Response
-curl "https://verify.twilio.com/v2/Services/$VERIFY_SID/VerificationCheck" -X POST \
+curl "https://verify.twilio.com/v2/Services/$VERIFY_SID/VerificationCheck" -s -X POST \
 --data-urlencode "Code=$1" \
 --data-urlencode "To=$USER_PHONE" \
 -u "$ACCOUNT_SID:$AUTH_TOKEN" 
