@@ -5,6 +5,7 @@ echo Request
 echo curl "https://verify.twilio.com/v2/Services/\$VERIFY_SID/Verifications" -X POST
 echo -d "To=\$USER_PHONE" 
 echo -d "Channel=\$CHANNEL_SMS" 
+echo -d "Locale=\$LOCALE"
 echo -u "\$ACCOUNT_SID:\$AUTH_TOKEN"
 echo
 echo
@@ -13,5 +14,6 @@ echo Response
 curl "https://verify.twilio.com/v2/Services/$VERIFY_SID/Verifications" -X POST \
 --data-urlencode "To=$USER_PHONE" \
 --data-urlencode "Channel=$CHANNEL_SMS" \
+--data-urlencode "Locale=$LOCALE" \
 -u "$ACCOUNT_SID:$AUTH_TOKEN" | jq
 echo

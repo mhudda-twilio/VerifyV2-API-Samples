@@ -4,11 +4,11 @@ echo Request
 echo
 echo curl -X POST "https://verify.twilio.com/v2/Services/\$VERIFY_SID/RateLimits/\$RATE_LIMIT_SID/Buckets/\$BUCKET_SID" 
 echo --data-urlencode "Max=10" 
-echo -u "\$ACCOUNT_SID:\$AUTHT_TOKEN"
+echo -u "\$ACCOUNT_SID:\$AUTH_TOKEN"
 echo
 echo
 echo Response
-curl -X POST "https://verify.twilio.com/v2/Services/$VERIFY_SID/RateLimits/$RATE_LIMIT_SID/Buckets/$BUCKET_SID" \
+curl -X -s POST "https://verify.twilio.com/v2/Services/$VERIFY_SID/RateLimits/$RATE_LIMIT_SID/Buckets/$BUCKET_SID" \
 --data-urlencode "Max=10" \
--u "$ACCOUNT_SID:$AUTHT_TOKEN" | jq
+-u "$ACCOUNT_SID:$AUTH_TOKEN" | jq
 echo 

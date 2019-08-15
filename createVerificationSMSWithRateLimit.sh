@@ -12,13 +12,13 @@ echo
 echo Response
 RATELIMITS=$(cat << EOF
 {
-    "phone_number": "+14088355774"
+    "$rateLimitUniqueName": "$USER_PHONE"
 }
 EOF
 )
 curl "https://verify.twilio.com/v2/Services/$VERIFY_SID/Verifications" -X POST \
 --data-urlencode "To=$USER_PHONE" \
---data-urlencode "Channel=CHANNEL_SMS" \
+--data-urlencode "Channel=$CHANNEL_SMS" \
 --data-urlencode "RateLimits=$RATELIMITS" \
--u "$ACCOUNT_SID:$AUTHT_TOKEN" | jq
+-u "$ACCOUNT_SID:$AUTH_TOKEN" | jq
 echo
