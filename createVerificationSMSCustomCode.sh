@@ -15,5 +15,5 @@ curl -X POST https://verify.twilio.com/v2/Services/$VERIFY_SID/Verifications \
 --data-urlencode "CustomCode=99999" \
 --data-urlencode "To=$USER_PHONE" \
 --data-urlencode "Channel=$CHANNEL_SMS" \
--u "$ACCOUNT_SID:$AUTH_TOKEN" | jq
+-u "$ACCOUNT_SID:$AUTH_TOKEN" 
 echo

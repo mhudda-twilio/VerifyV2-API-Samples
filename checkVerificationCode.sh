@@ -11,5 +11,5 @@ echo Response
 curl "https://verify.twilio.com/v2/Services/$VERIFY_SID/VerificationCheck" -X POST \
 --data-urlencode "Code=$1" \
 --data-urlencode "To=$USER_PHONE" \
--u "$ACCOUNT_SID:$AUTH_TOKEN" | jq
+-u "$ACCOUNT_SID:$AUTH_TOKEN" 
 echo 

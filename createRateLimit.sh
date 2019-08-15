@@ -12,5 +12,5 @@ echo response
 curl -X POST https://verify.twilio.com/v2/Services/$VERIFY_SID/RateLimits \
 --data-urlencode "Description=Limit verifications Demo" \
 --data-urlencode "UniqueName=phone_number_example" \
--u "$ACCOUNT_SID:$AUTH_TOKEN" | jq
+-u "$ACCOUNT_SID:$AUTH_TOKEN" 
 echo 

@@ -20,5 +20,5 @@ curl "https://verify.twilio.com/v2/Services/$VERIFY_SID/Verifications" -X POST \
 --data-urlencode "To=$USER_PHONE" \
 --data-urlencode "Channel=$CHANNEL_SMS" \
 --data-urlencode "RateLimits=$RATELIMITS" \
--u "$ACCOUNT_SID:$AUTH_TOKEN" | jq
+-u "$ACCOUNT_SID:$AUTH_TOKEN" 
 echo
