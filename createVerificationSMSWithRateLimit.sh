@@ -12,7 +12,7 @@ echo
 echo Response
 RATELIMITS=$(cat << EOF
 {
-    "$rateLimitUniqueName": "$USER_PHONE"
+    "$RATE_LIMIT_UNIQUE_NAME": "$USER_PHONE"
 }
 EOF
 )
