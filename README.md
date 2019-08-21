@@ -60,10 +60,13 @@ Before you run any of the following scripts, make sure you have execution permis
 ------------------------------------------------------------------------------------
 
 1. **createRateLimit.sh** | The Service Rate Limit resource represents the key that your application will provide when starting a phone verification request. For example, you may create a rate limit for an end-user IP address to prevent a malicious bot.
+
 1. **createBucketRateLimit.sh** | The Service Rate Limit Bucket resource defines the limit that should be enforced against the key it is associated with. A Rate Limit can have multiple buckets so that you can detect and stop attacks at different velocities.
 
 1. **createVerificationSMSWithRateLimit.sh** | To use the Rate Limits we need to update the request that starts phone verifications to include the values we want to limit. To do this we will add the new `RateLimit` parameter to our request. This api will send an OTP via sms with the ratelimit that has been set.
+
 1. **createVerificationCallWithRateLimit.sh** | To use the Rate Limits we need to update the request that starts phone verifications to include the values we want to limit. To do this we will add the new `RateLimit` parameter to our request. This api will send an OTP via call with the ratelimit that has been set.
+
 
 
 ## Meta
