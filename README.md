@@ -43,25 +43,27 @@ Before you run any of the following scripts, make sure you have execution permis
    $ chmod +x *.sh
    ```
 
+1. **createVerificationService.sh** | A Verification Service is the set of common configurations used to create and check verifications. 
 
-createVerificationService.sh 
-createVerificationSMS.sh	
-createVerificationSMSForeignLanguage.sh		
-createVerificationCall.sh		
-createVerificationCallForeignLanguage.sh	
-createVerificationSMSCustomCode.sh
-checkVerificationCode.sh			
+1. **createVerificationSMS.sh** | Probably the most common way to deliver a Two-Factor Authentication is via SMS. You can request a SMS message be sent to the user with the one time passcode.
 
+1. **createVerificationSMSForeignLanguage.sh** | Probably the most common way to deliver a Two-Factor Authentication is via SMS. You can request a SMS message be sent to the user with the one time passcode. This request passes in a different `locale` which will then change the language of the sms being delivered.
 
-createRateLimit.sh				
-createBucketRateLimit.sh			
-createVerificationSMSWithRateLimit.sh
-createVerificationCallWithRateLimit.sh		
+1. **createVerificationCall.sh** | You can request a SMS message be sent to the user with the one time passcode via a voice call.
 
-listAllBuckets.sh
-fetchBucket.sh
-deleteBucket.sh
-updateBucket.sh
+1. **createVerificationCallForeignLanguage.sh** | You can request a SMS message be sent to the user with the one time passcode via a voice call. This request passes in a different `locale` which will then change the language of the sms being delivered.
+
+1. **createVerificationSMSCustomCode.sh** | Probably the most common way to deliver a Two-Factor Authentication is via SMS. You can request a SMS message be sent to the user with a custom one time passcode
+
+1. **checkVerificationCode.sh** | This api allows you to verify that the user has the device in their possession. Pass in the OTP that was delivered into this request and you'll be able to see whether it was approved, denied or is pending. 
+
+------------------------------------------------------------------------------------
+
+1. **createRateLimit.sh** | The Service Rate Limit resource represents the key that your application will provide when starting a phone verification request. For example, you may create a rate limit for an end-user IP address to prevent a malicious bot.
+1. **createBucketRateLimit.sh** | The Service Rate Limit Bucket resource defines the limit that should be enforced against the key it is associated with. A Rate Limit can have multiple buckets so that you can detect and stop attacks at different velocities.
+
+1. **createVerificationSMSWithRateLimit.sh** | To use the Rate Limits we need to update the request that starts phone verifications to include the values we want to limit. To do this we will add the new `RateLimit` parameter to our request. This api will send an OTP via sms with the ratelimit that has been set.
+1. **createVerificationCallWithRateLimit.sh** | To use the Rate Limits we need to update the request that starts phone verifications to include the values we want to limit. To do this we will add the new `RateLimit` parameter to our request. This api will send an OTP via call with the ratelimit that has been set.
 
 
 ## Meta
