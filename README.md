@@ -67,7 +67,16 @@ Before you run any of the following scripts, make sure you have execution permis
 
 1. **createVerificationCallWithRateLimit.sh** | To use the Rate Limits we need to update the request that starts phone verifications to include the values we want to limit. To do this we will add the new `RateLimit` parameter to our request. This api will send an OTP via call with the ratelimit that has been set.
 
+NOTE:
+For PSD2 verifications, you must enable the flag within your verify service. 
+https://www.twilio.com/docs/verify/verifying-transactions-psd2
+This can be done during service creation or upon any existing Verify service by enabling it within the twilio console. 
 
+To enable within the Twilio Console: 
+1) Navigate to the Verify Tab
+2) Select your Verify service you would like PSD2 enabled on
+3) Click on the settings tab
+4) Enable 'Transaction Verification'
 
 ## Meta
 
